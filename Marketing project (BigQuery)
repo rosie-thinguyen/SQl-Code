@@ -1,0 +1,42 @@
+# Filter relevant projects
+SELECT * FROM 'report.sales'
+WHERE (LOWER (Project) = ='cassandra' OR 
+       LOWER (Project) = ' la bee one' OR 
+       LOWER (Project) = 'galinburg')
+AND   (LOWER (Ad_type) = 'image ad' OR 
+       LOWER (Ad_type) = 'expanded text ad')
+AND CR > 0.15
+AND Date BETWEEN '2019-06-01' AND '2019-07-03'
+ORDER BY Cost DESC;
+
+
+
+# Extract campaigns' names from a table and create a column name 'Project', then join two tables basing on the project name 
+WITH Pro1 AS (SELECT Date, Campaign_ads_name, Project
+     FROM 'report.01'),
+     Pro2 AS 
+     (SELECT Date,
+             CASE WHEN Campaign_ads_name like '%Cassandra%' THEN 'Cassandra'
+                  WHEN Campaign_ads_name like '%Galigurn% THEN 'Galinburg'
+                  WHEN Campaign_ads_name like '%LA Bee One%' THEN 'LA Bee One'
+                  WHEN Campaign_ads_name like '%Fox%' THEN 'Fox'
+                  WHEN Campaign_ads_name like '%Funlus Phoenix%' THEN 'Funluc Phoenix'
+                       ELSE 'Royal Never Give Up'
+                             END AS Project
+      FROM 'Facebook_ads_sample' Group BY Date, Project)
+
+SELECT Pro1.Date, Pro.Project FROM Pro1
+       LEFT JOIN Pro2
+            ON Pro1.Date = Pro2.Date AND Pro1.Project  = Pro2.Project
+
+
+
+
+# Create a sales report for each campaign, measuring campaigns' performance
+SELECT     Project, SUM (Cost) Cost,      SUM (Impressions) Impressions,
+           SUM (Clicks) Clicks,           SUM (Conversions) Conversions,
+           SUM (Video_views) Video_views, AVG (CR) CR,
+           SUM (Clicks) / SUM (Impressions) Click_throught_rate, SUM (Cost) / SUM (Clicks) Cost_Per_Click,
+           (SUM (Cost) / SUM (Impressions) * 100 ) Cost_per_thousand
+FROM 'report.sales'
+GROUP BY 1
