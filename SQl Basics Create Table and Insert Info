@@ -1,0 +1,48 @@
+# Table 1 Query
+CREATE TABLE EmployeeDemographics (
+                                  EmployeeID INT,
+                                  FirstName VARCHAR (50).
+                                  LastName CARCHAR (50),
+                                  Age INT,
+                                  Gender VARCHAR (50)
+                                  )
+
+
+
+# Table 2 Query
+CREATE TABLE EmployeeSalary (
+                             EmployeeID INT,
+                             JobTitle VARCHAR (50),
+                             Salary INT 
+                             )
+
+
+
+# Table 1 Insert
+INSERT INTO EmployeeDemographics VALUES
+(101, 'Anna', 'Sanchez', 29, 'Female'),
+(102, 'Terri', 'Lee Duffy', 30, 'Male'),
+(103, 'Roberto', 'Tamburello', 35, 'Male'),
+(104, 'Rob', 'Walters', 31, 'Male'),
+(105, 'Gail', 'Erickson', 29, 'Female'),
+(106, 'Jossef', 'Goldberg', 32, 'Female'),
+(107, 'Dylan', 'Miller', 38, 'Male'),
+(108, 'Michael', 'Raheem', 31, 'Male'),
+(109, 'Janice', 'Brown', 33, 'Female')
+
+
+
+
+
+# Table 2 Insert
+INSERT INTO EmployeeSalary VALUES
+(101, 'HR', 25000),
+(102, 'Salesman', 30000),
+(103, 'Receptionist', 24000),
+(104, 'Regional Manager', 45000),
+(105, 'Supplier Relations', 35000)
+(106, 'Salesman', 30000),
+(107, 'Accountant', 36000),
+(108. 'HR', 27000),
+(109, 'Salesman', 30000),
+
