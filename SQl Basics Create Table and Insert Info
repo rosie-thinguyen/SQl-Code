@@ -1,4 +1,4 @@
-# Table 1 Query
+-- Table 1 Query:
 CREATE TABLE EmployeeDemographics (
                                   EmployeeID INT,
                                   FirstName VARCHAR (50).
@@ -9,7 +9,7 @@ CREATE TABLE EmployeeDemographics (
 
 
 
-# Table 2 Query
+-- Table 2 Query:
 CREATE TABLE EmployeeSalary (
                              EmployeeID INT,
                              JobTitle VARCHAR (50),
@@ -18,7 +18,7 @@ CREATE TABLE EmployeeSalary (
 
 
 
-# Table 1 Insert
+-- Table 1 Insert:
 INSERT INTO EmployeeDemographics VALUES
 (101, 'Anna', 'Sanchez', 29, 'Female'),
 (102, 'Terri', 'Lee Duffy', 30, 'Male'),
@@ -34,7 +34,7 @@ INSERT INTO EmployeeDemographics VALUES
 
 
 
-# Table 2 Insert
+-- Table 2 Insert:
 INSERT INTO EmployeeSalary VALUES
 (101, 'HR', 25000),
 (102, 'Salesman', 30000),
