@@ -37,6 +37,6 @@ SELECT     Project, SUM (Cost) Cost,      SUM (Impressions) Impressions,
            SUM (Clicks) Clicks,           SUM (Conversions) Conversions,
            SUM (Video_views) Video_views, AVG (CR) CR,
            SUM (Clicks) / SUM (Impressions) Click_throught_rate, SUM (Cost) / SUM (Clicks) Cost_Per_Click,
-           (SUM (Cost) / SUM (Impressions) * 100 ) Cost_per_thousand
+           (SUM (Cost) / SUM (Impressions) * 100 ) Cost_Per_Thousand
 FROM 'report.sales'
 GROUP BY 1
