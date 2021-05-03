@@ -1,0 +1,4 @@
+-- Stored Precedures for future use:
+
+CREATE PROCEDURE Temp_Employee
+AS DROP 
