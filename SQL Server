@@ -1,4 +1,4 @@
-# Filtering high_value customers with orders over 10000 
+-- Filtering high_value customers with orders over 10000:
 
 SELECT     Customers.CustomerID,
            Customers.CompanyName,
