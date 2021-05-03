@@ -1,4 +1,4 @@
-# Filter relevant projects
+-- Filter relevant projects:
 SELECT * FROM 'report.sales'
 WHERE (LOWER (Project) = ='cassandra' OR 
        LOWER (Project) = ' la bee one' OR 
@@ -11,7 +11,7 @@ ORDER BY Cost DESC;
 
 
 
-# Extract campaigns' names from a table and create a column name 'Project', then join two tables basing on the project name 
+-- Extract campaigns' names from a table and create a column name 'Project', then join two tables basing on the project name: 
 WITH Pro1 AS (SELECT Date, Campaign_ads_name, Project
      FROM 'report.01'),
      Pro2 AS 
@@ -32,7 +32,7 @@ SELECT Pro1.Date, Pro.Project FROM Pro1
 
 
 
-# Create a sales report for each campaign, measuring campaigns' performance
+-- Create a sales report for each campaign, measuring campaigns' performance:
 SELECT     Project, SUM (Cost) Cost,      SUM (Impressions) Impressions,
            SUM (Clicks) Clicks,           SUM (Conversions) Conversions,
            SUM (Video_views) Video_views, AVG (CR) CR,
