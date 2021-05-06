@@ -66,7 +66,7 @@ WHERE continent is not null
 ORDER BY 3 DESC
 
 
--- Looking at total population vs VAccinations
+-- Looking at total population vs Vaccinations
 
 -- Temp Table
 
